@@ -1,0 +1,171 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.25%;
+}
+
+body{
+    font-family: "Lato", sans-serif;
+    padding: 3rem;
+    line-height: 1.7;
+    box-sizing: border-box;
+}
+
+.header{
+   width: 100%;
+   height: 95vh;
+   background-image: linear-gradient(to right bottom,#7ed56fd8,#28b485d3),url("../img/hero.jpg");
+   background-size: cover;
+   background-position: top;
+   clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+}
+
+.logo-box{
+    position: absolute;
+    left: 4rem;
+    top: 4rem;
+}
+
+.logo{
+    height: 3.5rem;
+}
+
+.text-box{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.header-primary{
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 6rem;
+}
+.header-primary-main{
+    display: block;
+    font-size: 6rem;
+    letter-spacing: 3rem;
+    font-weight: 400;
+    animation: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.header-primary-sub{
+    display: block;
+    font-size: 1.9rem;
+    letter-spacing: 1.6rem;
+    font-weight: 700;
+    animation: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.btn:link,.btn:visited{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding: 1.5rem 3rem;
+    text-transform: uppercase;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    animation: moveInBottom 1s ease-out 0.75s;
+    animation-fill-mode: backwards;
+    font-size: 1.6rem;
+}
+
+.btn:hover{
+    box-shadow: 0 1rem 1rem rgb(0,0,0,0.2);
+    transform: translateY(-0.3rem);
+}
+
+.btn:active{
+    box-shadow: 0 .5rem 1rem rgb(0,0,0,0.2);
+    transform: translateY(-.1rem);
+}
+
+.btn-white{
+    background-color: #fff;
+    color: grey;
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.btn-white::after{
+    background-color: #fff;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80%{
+        transform: translateX(1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80%{
+        transform: translateX(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
